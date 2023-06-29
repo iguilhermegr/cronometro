@@ -5,24 +5,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contra | Pensamento</title>
+  <link rel="icon" type="image/png" href="https://guidsribeiro.github.io/cronometro/src/img/icon.png"/>
   <link rel="stylesheet" type="text/css" href="../src/style/style.css" />
-  <script>alert('Este site não fornece suporte para dispositivos mobiles')</script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <script>alert('Este site não fornece suporte completo para dispositivos mobiles')</script>
 </head>
 
-<body>
+<body style="background-color: black;">
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Menu</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
 
-  <div id="cronometro">00:00:10</div>
-  <div id="controles">
-    <span>Controles:</span>
-    <p>
-      <input type="number" id="intervaloAlarmeMinutos" value="0" max="60" min="0" />
-      <span>Minutos</span>
-      <input type="number" id="intervaloAlarmeSegundos" value="10" max="59" min="0" />
-      <span>Segundos</span>
-    <p>
-      <button id="iniciar">Iniciar</button>
-      <button id="parar">Parar</button>
-      <button id="zerar">Zerar</button>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="/">Início</a></li>
+          <li><a href="../favor/">A Favor</a></li>
+          <li><a href="../contra/">Contra</a></li>
+          <li><a href="../neutro">Neutro</a></li>
+          <li><a href="#">---</a></li>
+          <li><a href="principal">Principal</a></li>
+          <li><a href="pensamento">Pensamento</a></li>
+          <li><a href="ultimo-argumento">Último Argumento</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h1 class="text-center" style="color: white;">Pensamento do Grupo Contra</h1>
+
+  <div class="container">
+    <div id="cronometro">00:00:10</div>
+    <div class="container" id="controles">
+      <span>Controles:</span>
+      <br />
+      <p>
+        <input type="number" style="color: black;" id="intervaloAlarmeMinutos" value="0" max="60" min="0" />
+        <span>Minutos</span>
+        <input type="number" style="color: black;" id="intervaloAlarmeSegundos" value="10" max="59" min="0" />
+        <span>Segundos</span>
+      <p>
+        <button class="btn btn-success" id="iniciar">Iniciar</button>
+        <button class="btn btn-primary" id="parar">Pausar</button>
+        <button class="btn btn-danger" id="zerar">Zerar</button>
+    </div>
   </div>
 
   <script type="text/javascript" src="../src/controller/script.js"></script>

@@ -7,22 +7,19 @@ body {
   font-weight: bold;
   letter-spacing: -10px;
   font-size: 240px;
-  background: red;
+  background: #778DA9;
   color: white;
   padding: 5px 10px 5px 20px;
   width: 1100px;
-  margin: 3cm 1cm 1cm 2cm;
   border-radius: 20px;
   text-align: center;
 }
 
 #controles {
   position: fixed;
-  margin: 2cm 4cm 2cm 2cm;
   text-align: center;
   margin: 10px;
   color: white;
-  margin-left: 500px;
   margin-bottom: 160px;
   margin-right: 0px;
 }
