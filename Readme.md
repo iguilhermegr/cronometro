@@ -2,7 +2,7 @@
 
 ### <div align="center"><code> Foi um projeto desenvolvido para uma aula de português </code></div>
 ### <div align="center"><code> Se trata de um debate com tema escolhidos pela </code></div>
-### <div align="center"><code> Professora de Português do 2C de Sistemas do CEEP Cianorte </code></div>
+### <div align="center"><code> Professora de Português dos Segundos Anos do CEEP Cianorte </code></div>
 ### <div align="center"><code> É composto por 1 debate principal das partes: </code></div>
 ### <div align="center"><code> Contra, a favor e Neutro </code></div>
 ### <div align="center"><code> Após o debate principal tem a exposição do segundo argumento </code></div>
