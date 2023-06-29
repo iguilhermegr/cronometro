@@ -1,13 +1,14 @@
 window.onload = function () {
   var divCronometro = document.getElementById("cronometro");
   var btnIniciar = document.getElementById("iniciar");
-  var btnParar = document.getElementById("parar");
-  var btnZerar = document.getElementById("zerar");
-  var intervaloSegundos = document.getElementById("intervaloAlarme");
-  new Cronometro(divCronometro, btnIniciar, btnParar, btnZerar, intervaloAlarmeMinutos, intervaloAlarmeSegundos);
-}
+  var btnPausar = document.getElementById("pausar");
+  var btnReiniciar = document.getElementById("reiniciar");
+  var inputIntervaloMinutos = document.getElementById("intervaloAlarmeMinutos");
+  var inputIntervaloSegundos = document.getElementById("intervaloAlarmeSegundos");
+  new Cronometro(divCronometro, btnIniciar, btnPausar, btnReiniciar, inputIntervaloMinutos, inputIntervaloSegundos);
+};
 
-var Cronometro = function (div, btnIniciar, btnParar, btnZerar, inputIntervaloMinutos, inputIntervaloSegundos) {
+var Cronometro = function (div, btnIniciar, btnPausar, btnReiniciar, inputIntervaloMinutos, inputIntervaloSegundos) {
   var este = this;
   this.estado = null;
   this.hora = 0;
@@ -17,21 +18,19 @@ var Cronometro = function (div, btnIniciar, btnParar, btnZerar, inputIntervaloMi
   this.intervaloAlarmeSegundos = 0;
   this.start = false;
 
-  // Adicionando elementos de aúdio para o alarme
+  // Adicionando elementos de áudio para o alarme
   this.audio = document.createElement('audio');
   this.sourceAudio = document.createElement('source');
-  this.sourceAudio.setAttribute('src', 'http://www.online-clockalarm.com/sounds/sound3.mp3');
-  this.sourceAudio.setAttribute('type', 'audio/mp3');
+  this.sourceAudio.setAttribute('src', '../src/audio/alarme.wav');
   this.audio.appendChild(this.sourceAudio);
 
   this.atualizar = function () {
-    var str = (este.hora < 10 ? "0" +
-      este.hora : este.hora) + ":" +
+    var str = (este.hora < 10 ? "0" + este.hora : este.hora) + ":" +
       (este.minuto < 10 ? "0" + este.minuto : este.minuto) + ":" +
       (este.segundo < 10 ? "0" + este.segundo : este.segundo);
     div.innerHTML = str;
-  }
-  // Função pra iniciar o cronômetro
+  };
+
   this.iniciar = function () {
     if (!este.start) {
       este.estado = setInterval(function () {
@@ -49,83 +48,56 @@ var Cronometro = function (div, btnIniciar, btnParar, btnZerar, inputIntervaloMi
       }, 1000);
       este.start = true;
     }
-  }
-  // Função para parar o cronômetro
-  this.parar = function () {
+  };
+
+  this.pausar = function () {
     clearInterval(este.estado);
     este.start = false;
-  }
-  // Função para zerar o cronômetro
-  this.zerar = function () {
+  };
+
+  this.reiniciar = function () {
     este.hora = 0;
     este.minuto = 0;
     este.segundo = 0;
     este.atualizar();
-  }
-  // Funções para setar o intervalo do alarme
+  };
+
   this.setIntervaloAlarmeMinutos = function (minutos) {
     este.intervaloAlarmeMinutos = minutos;
-  }
+  };
+
   this.setIntervaloAlarmeSegundos = function (segundos) {
     este.intervaloAlarmeSegundos = segundos;
-  }
-  // Função para verificar se o alarme deve ser disparado
+  };
+
   this.verificaAlarme = function () {
-    if (este.intervaloAlarmeMinutos != 0 || este.intervaloAlarmeSegundos != 0) {
-      var segundosTotais = este.hora * 3600 + este.minuto * 60 + este.segundo;
-      var intervaloAlarmeSegundosTotais = parseInt(este.intervaloAlarmeMinutos * 60) + parseInt(este.intervaloAlarmeSegundos);
-      if (segundosTotais % intervaloAlarmeSegundosTotais == 0) {
-        este.audio.play();
-      };
+    if (este.intervaloAlarmeMinutos == este.minuto && este.intervaloAlarmeSegundos == este.segundo) {
+      este.audio.play();
+      este.pausar();
     }
-  }
+  };
+  este.setIntervaloAlarmeMinutos(inputIntervaloMinutos.value);
+  este.setIntervaloAlarmeSegundos(inputIntervaloSegundos.value);
 
-  // Adicionando eventos
-  if (document.addEventListener) {
-    inputIntervaloSegundos.addEventListener("change", function () {
-      este.setIntervaloAlarmeSegundos(inputIntervaloSegundos.value);
-    });
-    inputIntervaloMinutos.addEventListener("change", function () {
-      este.setIntervaloAlarmeMinutos(inputIntervaloMinutos.value);
-    });
-    btnIniciar.addEventListener("click", function () {
-      este.iniciar();
-    });
-    btnParar.addEventListener("click", function () {
-      este.parar();
-    });
-    btnZerar.addEventListener("click", function () {
-      este.zerar();
-    });
-
-  } else {
-    inputIntervaloMinutos.addAttachEvent("onChange", function () {
-      este.setIntervaloAlarmeMinutos(inputIntervaloMinutos.value);
-    });
-    inputIntervaloSegundos.addAttachEvent("onChange", function () {
-      este.setIntervaloAlarmeSegundos(inputIntervaloSegundos.value);
-    });
-    btnIniciar.addAttachEvent("onClick", function () {
-      este.iniciar();
-    });
-    btnParar.addAttachEvent("onClick", function () {
-      c.parar();
-    });
-    btnZerar.addAttachEvent("onClick", function () {
-      c.zerar();
-    });
-  }
+  btnIniciar.addEventListener("click", function () {
+    este.iniciar();
+  });
+  btnPausar.addEventListener("click", function () {
+    este.pausar();
+  });
+  btnReiniciar.addEventListener("click", function () {
+    este.reiniciar();
+  });
 };
 
-// Atalhos de tecla
 window.addEventListener('keydown', (e) => {
   if (e.key == 'i') {
     document.getElementById('iniciar').click();
   }
   if (e.key == 'p') {
-    document.getElementById('parar').click();
+    document.getElementById('pausar').click();
   }
-  if (e.key == 'z') {
-    document.getElementById('zerar').click();
+  if (e.key == 'r') {
+    document.getElementById('reiniciar').click();
   }
 });
