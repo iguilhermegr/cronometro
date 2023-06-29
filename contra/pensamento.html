@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contra | Pensamento</title>
+  <link rel="stylesheet" type="text/css" href="../src/style/style.css" />
+  <script>alert('Este site não fornece suporte para dispositivos mobiles')</script>
+</head>
+
+<body>
+
+  <div id="cronometro">00:00:10</div>
+  <div id="controles">
+    <span>Controles:</span>
+    <p>
+      <input type="number" id="intervaloAlarmeMinutos" value="0" max="60" min="0" />
+      <span>Minutos</span>
+      <input type="number" id="intervaloAlarmeSegundos" value="10" max="59" min="0" />
+      <span>Segundos</span>
+    <p>
+      <button id="iniciar">Iniciar</button>
+      <button id="parar">Parar</button>
+      <button id="zerar">Zerar</button>
+  </div>
+
+  <script type="text/javascript" src="../src/controller/script.js"></script>
+</body>
+
+</html>
