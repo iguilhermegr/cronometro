@@ -10,7 +10,7 @@
 ### <div align="center"><code> E por último a exposição do último argumento de ambas as partes</code></div>
  
 <div align="center">
-    <b><a href="https://guidsribeiro.github.io/telegrafo-web/">Site onde o Projeto é Carregado!</a></b>
+    <b><a href="https://guidsribeiro.github.io/cronometro/">Site onde o Projeto é Carregado!</a></b>
 </div>
  
 
