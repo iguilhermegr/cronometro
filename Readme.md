@@ -3,9 +3,9 @@
 ### <div align="center"><code> Foi um projeto desenvolvido para uma aula de português </code></div>
 ### <div align="center"><code> Se trata de um debate com tema escolhidos pela </code></div>
 ### <div align="center"><code> Professora de Português dos Segundos Anos do CEEP Cianorte </code></div>
-### <div align="center"><code> É composto por 1 debate principal das partes: </code></div>
-### <div align="center"><code> Contra, a favor e Neutro </code></div>
-### <div align="center"><code> Para mais informações entre no site do Projeto</code></div>
+### <div align="center"><code> É composto por 4 grupos: </code></div>
+### <div align="center"><code> Contra, A Favor, Neutro e Mediadores </code></div>
+### <div align="center"><code> Para mais informações entre no site do Projeto </code></div>
  
 <div align="center">
     <b><a href="https://guidsribeiro.github.io/cronometro/">Site onde o Projeto é Carregado!</a></b>
