@@ -5,9 +5,7 @@
 ### <div align="center"><code> Professora de Português dos Segundos Anos do CEEP Cianorte </code></div>
 ### <div align="center"><code> É composto por 1 debate principal das partes: </code></div>
 ### <div align="center"><code> Contra, a favor e Neutro </code></div>
-### <div align="center"><code> Após o debate principal tem a exposição do segundo argumento </code></div>
-### <div align="center"><code> de ambas as partes </code></div>
-### <div align="center"><code> E por último a exposição do último argumento de ambas as partes</code></div>
+### <div align="center"><code> Para mais informações entre no site do Projeto</code></div>
  
 <div align="center">
     <b><a href="https://guidsribeiro.github.io/cronometro/">Site onde o Projeto é Carregado!</a></b>
